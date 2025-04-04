@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfcu5m0ggban"]
+
+[ext_resource type="Texture2D" uid="uid://by76ikj5ngh0c" path="res://icon.svg" id="1_0qbs3"]
+[ext_resource type="Script" uid="uid://h6hq08rqg652" path="res://src/simple_arm.gd" id="1_5oclx"]
+
+[node name="simpleArm" type="Node2D"]
+script = ExtResource("1_5oclx")
+
+[node name="shoulder" type="Marker2D" parent="."]
+
+[node name="shoudlerSprite" type="Node2D" parent="shoulder"]
+
+[node name="Sprite2D" type="Sprite2D" parent="shoulder/shoudlerSprite"]
+position = Vector2(95.5919, -3)
+scale = Vector2(1.60013, 0.238806)
+texture = ExtResource("1_0qbs3")
+
+[node name="elbow" type="Marker2D" parent="shoulder"]
+position = Vector2(200, 0)
+
+[node name="elbowSprite" type="Node2D" parent="shoulder/elbow"]
+position = Vector2(0, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="shoulder/elbow/elbowSprite"]
+position = Vector2(144.507, -5)
+scale = Vector2(2.41395, 0.231726)
+texture = ExtResource("1_0qbs3")
+
+[node name="hand" type="Marker2D" parent="shoulder/elbow"]
+position = Vector2(300, 0)
+
+[node name="elbowSprite" type="Node2D" parent="shoulder/elbow/hand"]
+position = Vector2(8.78949, -14.8575)
+
+[node name="Sprite2D" type="Sprite2D" parent="shoulder/elbow/hand/elbowSprite"]
+position = Vector2(2.21051, 11.8575)
+scale = Vector2(0.246254, 0.356304)
+texture = ExtResource("1_0qbs3")

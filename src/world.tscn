@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxu7kch78fx27"]
+
+[ext_resource type="PackedScene" uid="uid://dfcu5m0ggban" path="res://src/simple_arm.tscn" id="2_0qwtu"]
+[ext_resource type="PackedScene" uid="uid://ca7ajmekbqm00" path="res://src/target.tscn" id="2_xlegt"]
+[ext_resource type="PackedScene" uid="uid://l3jdybyxt8h2" path="res://src/arm.tscn" id="3_0qwtu"]
+
+[node name="world" type="Node2D"]
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_xlegt")]
+position = Vector2(372, 321)
+
+[node name="simpleArm" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_0qwtu")]
+position = Vector2(590, 604)
+target = NodePath("../Sprite2D")
+flip_elbow = true
+
+[node name="simpleArm2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_0qwtu")]
+position = Vector2(84, 603)
+target = NodePath("../Sprite2D")
+
+[node name="arm" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_0qwtu")]
+position = Vector2(24, 52)
+target = NodePath("../Sprite2D")
+
+[node name="arm2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_0qwtu")]
+position = Vector2(1108, 37)
+target = NodePath("../Sprite2D")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 31.0
+offset_top = -73.0
+offset_right = 1003.0
+offset_bottom = -16.0
+text = "Full tutorial of this coming out in a few days on my youtube channel NAD LABS :)"
+
+[editable path="simpleArm"]
+[editable path="simpleArm2"]
